@@ -17,7 +17,7 @@ defmodule FitzClient do
   end
 
   def do_process([user: user, page: page, page_size: page_size]) do
-    @fizz_buzz_api.fetch_game(user, page, page_size) 
+    @fizz_buzz_api.fetch_game(user, page, page_size)
     |> print_game
   end
 
@@ -40,7 +40,7 @@ defmodule FitzClient do
   def print_game([favorites: favs, fizz_buzz: fb]) do
     IO.puts "FIZZ BUZZ:"
     Enum.each(fb, fn(numb) ->
-      [i, st] = numb 
+      [i, st] = numb
       star = if Enum.member?(favs, Integer.to_string(i)), do: ' *', else: ''
       IO.puts " #{i} === #{st}#{star}"
     end)
